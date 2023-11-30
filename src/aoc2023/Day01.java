@@ -2,7 +2,7 @@ package aoc2023;
 
 import java.util.List;
 
-public class Day01 extends AOCPuzzle {
+public class Day01 extends AOCUtils {
 
     public Day01() { super("1"); }
 
