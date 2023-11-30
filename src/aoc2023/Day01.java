@@ -1,4 +1,4 @@
-package aoc2019;
+package aoc2023;
 
 import java.util.List;
 
