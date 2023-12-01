@@ -10,65 +10,43 @@ public class Day01 extends AOCUtils {
 
     @Override
     void solve(List<String> input) {
-        int sum = 0;
-        /*for(String row : input) {
-            String number = "";
-            for(Character c : row.toCharArray())
-                if(Character.isDigit(c))
-                    number += c;
-            number = number.substring(0, 1) + number.substring(number.length()-1);
-            sum += Integer.parseInt(number);
-        }*/
-        solution(sum);
 
-        sum = 0;
-        Map<String, Integer> map = Map.of(
-                "one", 1,
-                "two", 2,
-                "three", 3,
-                "four", 4,
-                "five", 5,
-                "six", 6,
-                "seven", 7,
-                "eight", 8,
-                "nine", 9
+        solution(sum(input));
+
+        Map<String, String> map = Map.of(
+                "one", "o1e",
+                "two", "t2o",
+                "three", "t3e",
+                "four", "f4r",
+                "five", "f5e",
+                "six", "s6x",
+                "seven", "s7n",
+                "eight", "e8t",
+                "nine", "n9e"
         );
 
         List<String> conv = new ArrayList<>();
         for(String row : input) {
-            String app = "";
-            char[] rowArray = row.toCharArray();
-            String subString = "";
-            for(Character c : rowArray) {
-                subString += c;
-                if(Character.isAlphabetic(c))
-                    app += c;
-                else if(Character.isDigit(c)) {
-                    app = "";
-                    continue;
-                }
-                for(int i = 0; i < app.length(); i++) {
-                    if(map.containsKey(app.substring(i))) {
-                        subString = subString.replace(app.substring(i, app.length()-1), map.get(app.substring(i)).toString());
-                        app = app.substring(app.length()-1);
-                        break;
-                    }
-                }
-            }
-            conv.add(subString);
-        }
+            for (String key : map.keySet())
+                row = row.replace(key, map.get(key));
+            conv.add(row);
+        }//for
 
-        for(String row : conv) {
-            String number = "";
-            for(Character c : row.toCharArray())
-                if(Character.isDigit(c))
-                    number += c;
-            number = number.substring(0, 1) + number.substring(number.length()-1);
-            sum += Integer.parseInt(number);
-        }
-        System.out.println(conv);
-        solution(sum);
+        solution(sum(conv));
 
     }//solve
+
+    int sum(List<String> rows) {
+        int sum = 0;
+        for(String row : rows) {
+            StringBuilder number = new StringBuilder();
+            for(Character c : row.toCharArray())
+                if(Character.isDigit(c))
+                    number.append(c).append(c);
+            number = new StringBuilder(number.substring(0, 1) + number.substring(number.length() - 1));
+            sum += Integer.parseInt(number.toString());
+        }//for
+        return sum;
+    }//sum
 
 }//class
