@@ -8,7 +8,16 @@ public class Day01 extends AOCUtils {
 
     @Override
     void solve(List<String> input) {
-
+        int sum = 0;
+        for(String row : input) {
+            String number = "";
+            for(Character c : row.toCharArray())
+                if(Character.isDigit(c))
+                    number += c;
+            number = number.substring(0, 1) + number.substring(number.length()-1);
+            sum += Integer.parseInt(number);
+        }
+        solution(sum);
     }//solve
 
 }//class
