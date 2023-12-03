@@ -42,6 +42,7 @@ public class Day03 extends AOCUtils {
         int j = 0;
 
         for (String row : input) {
+
             StringBuilder number = new StringBuilder();
             List<Integer> index = new ArrayList<>();
             int i = 0;
@@ -52,14 +53,15 @@ public class Day03 extends AOCUtils {
                     number.append(c);
                     index.add(i);
                 } else if (!number.isEmpty()) {
-                    cnt++;
-                    number.append("R").append(j).append("N").append(cnt);
+                    number.append("R").append(j).append("N").append(cnt++);
                     indexNumber.put(number.toString(), new Position(index, j));
                     number = new StringBuilder();
                     index = new ArrayList<>();
                 }//else if
 
-                if (!Character.isDigit(c) && c != '.') indexSymbol.put(new Point(i, j), c);
+                if (!Character.isDigit(c) && c != '.')
+                    indexSymbol.put(new Point(i, j), c);
+
                 i++;
             }//for
 
@@ -75,25 +77,29 @@ public class Day03 extends AOCUtils {
         int sum = 0;
         int sum2 = 0;
         for (Map.Entry<Point, Character> map : indexSymbol.entrySet()) {
+
             int x = map.getKey().x;
             int y = map.getKey().y;
             List<Integer> adjacent = new ArrayList<>();
             for (Map.Entry<String, Position> entry : indexNumber.entrySet()) {
+
                 String key = entry.getKey();
                 int n = Integer.parseInt(key.split("R")[0]);
                 int yN = entry.getValue().y;
                 List<Integer> indices = entry.getValue().x;
 
-                for (Integer inx : indices) {
+                for (Integer inx : indices)
                     if ((Math.abs(yN - y) <= 1 && Math.abs(inx - x) <= 1)) {
                         sum += n;
                         adjacent.add(n);
                         break;
                     }//if
-                }//for
+
             }//for
+
             if(adjacent.size() == 2)
                 sum2 += (adjacent.get(0) * adjacent.get(1));
+
         }//for
 
         solution(sum);
