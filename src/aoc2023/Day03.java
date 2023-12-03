@@ -73,10 +73,11 @@ public class Day03 extends AOCUtils {
         }//for
 
         int sum = 0;
+        int sum2 = 0;
         for (Map.Entry<Point, Character> map : indexSymbol.entrySet()) {
             int x = map.getKey().x;
             int y = map.getKey().y;
-
+            List<Integer> adjacent = new ArrayList<>();
             for (Map.Entry<String, Position> entry : indexNumber.entrySet()) {
                 String key = entry.getKey();
                 int n = Integer.parseInt(key.split("R")[0]);
@@ -86,13 +87,17 @@ public class Day03 extends AOCUtils {
                 for (Integer inx : indices) {
                     if ((Math.abs(yN - y) <= 1 && Math.abs(inx - x) <= 1)) {
                         sum += n;
+                        adjacent.add(n);
                         break;
                     }//if
                 }//for
             }//for
+            if(adjacent.size() == 2)
+                sum2 += (adjacent.get(0) * adjacent.get(1));
         }//for
 
         solution(sum);
+        solution(sum2);
     }//solve
 
 }//class

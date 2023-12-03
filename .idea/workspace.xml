@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day3 - init">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in/day3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/day3.txt" afterDir="false" />
+    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day3 - part1">
       <change beforePath="$PROJECT_DIR$/src/aoc2023/Day03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day03.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701535375611</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="day3 - part1">
+      <option name="closed" value="true" />
+      <created>1701601617108</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701601617108</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +134,7 @@
     <MESSAGE value="day1 - part1" />
     <MESSAGE value="day1 - part2" />
     <MESSAGE value="day3 - init" />
-    <option name="LAST_COMMIT_MESSAGE" value="day3 - init" />
+    <MESSAGE value="day3 - part1" />
+    <option name="LAST_COMMIT_MESSAGE" value="day3 - part1" />
   </component>
 </project>
