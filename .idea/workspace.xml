@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day3 - part2">
+    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day4 - part1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2023/Day04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day04.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/day03&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/day04&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/AoC2019&quot;
   }
 }</component>
@@ -123,7 +124,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701601798686</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="day4 - init">
+      <option name="closed" value="true" />
+      <created>1701605928281</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701605928281</updated>
+    </task>
+    <task id="LOCAL-00008" summary="day4 - part1">
+      <option name="closed" value="true" />
+      <created>1701685372729</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701685372729</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +161,8 @@
     <MESSAGE value="day3 - init" />
     <MESSAGE value="day3 - part1" />
     <MESSAGE value="day3 - part2" />
-    <option name="LAST_COMMIT_MESSAGE" value="day3 - part2" />
+    <MESSAGE value="day4 - init" />
+    <MESSAGE value="day4 - part1" />
+    <option name="LAST_COMMIT_MESSAGE" value="day4 - part1" />
   </component>
 </project>
