@@ -22,46 +22,41 @@ public class Day05 extends AOCUtils {
                 if (input.get(i).isBlank()) {
                     i++;
                     continue;
-                } // if
+                }//if
 
                 List<BigInteger> rowNumber = convertToBigIntegers(List.of(input.get(i).split(" ")));
-                System.out.println(rowNumber);
 
                 for (BigInteger key : seeds.keySet()) {
-                    System.out.println("AAA" + rowNumber + " " + seeds.get(key) + "key: " + key);
                     if (
                         !excluded.contains(key) &&
                         rowNumber.get(1).compareTo(seeds.get(key)) <= 0 &&
                         rowNumber.get(1).add(rowNumber.get(2)).compareTo(seeds.get(key)) > 0
                     ) {
                         excluded.add(key);
-                        System.out.println(seeds.get(key) + " " + rowNumber.get(1) + " " + rowNumber.get(0));
                         seeds.put(key, seeds.get(key).add(rowNumber.get(0).subtract(rowNumber.get(1))));
-                    } // if
+                    }//if
 
-                } // for
+                }//for
 
                 i++;
                 if (i >= input.size())
                     break;
 
-            } // while
-            System.out.println(seeds);
+            }//while
 
             i++;
 
-        } // for
+        }//for
 
         solution(seeds.values().stream().min(BigInteger::compareTo).orElse(BigInteger.ZERO).toString());
 
-    } // solve
+    }//solve
 
     private static List<BigInteger> convertToBigIntegers(List<String> strings) {
         List<BigInteger> bigIntegers = new ArrayList<>();
-        for (String str : strings) {
+        for (String str : strings)
             bigIntegers.add(new BigInteger(str));
-        }
         return bigIntegers;
-    }
+    }//convertToBigIntegers
 
 }//class
