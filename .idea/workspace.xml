@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day4 - part1">
-      <change afterPath="$PROJECT_DIR$/in/day5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aoc2023/Day05.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2023/AOC2023.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/AOC2023.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in/day5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/day5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2023/Day05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day05.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/day05",
+    "git-widget-placeholder": "Reverting in feature/day05",
     "last_opened_file_path": "C:/Users/andre/IdeaProjects/AoC2019"
   }
 }]]></component>
