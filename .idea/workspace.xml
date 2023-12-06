@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day6 - part 2">
-      <change beforePath="$PROJECT_DIR$/src/aoc2023/Day06.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day06.java" afterDir="false" />
+    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day7 - init">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2023/AOC2023.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/AOC2023.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2023/Day05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day05.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/day06&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/day07&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/AoC2019&quot;
   }
 }</component>
@@ -212,7 +215,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701852693259</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="day7 - init">
+      <option name="closed" value="true" />
+      <created>1701860679250</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701860679250</updated>
+    </task>
+    <task id="LOCAL-00015" summary="day7 - init">
+      <option name="closed" value="true" />
+      <created>1701860730326</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701860730326</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,6 +259,7 @@
     <MESSAGE value="day6 - part1" />
     <MESSAGE value="day5 - :(" />
     <MESSAGE value="day6 - part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="day6 - part 2" />
+    <MESSAGE value="day7 - init" />
+    <option name="LAST_COMMIT_MESSAGE" value="day7 - init" />
   </component>
 </project>
