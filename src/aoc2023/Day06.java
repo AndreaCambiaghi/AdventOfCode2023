@@ -17,7 +17,17 @@ public class Day06 extends AOCUtils {
             for (int j = 0; j <= times.get(i); j++)
                 cnt += (times.get(i) - j) * j > distances.get(i) ? 1 : 0;
             ris *= cnt;
-        }//ris
+        }//for
+
+        solution(ris);
+
+        long time = Long.parseLong(input.get(0).split(":\\s+")[1].replace(" ", ""));
+        long distance = Long.parseLong(input.get(1).split(":\\s+")[1].replace(" ", ""));
+
+        ris = 0;
+        for (int j = 0; j <= time; j++) {
+            ris += (time - j) * j > distance ? 1 : 0;
+        }//for
 
         solution(ris);
     }//solve
