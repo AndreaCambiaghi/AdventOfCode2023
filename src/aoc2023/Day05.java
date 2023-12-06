@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class Day05 extends AOCUtils {
     public Day05() { super("5"); }
 
-    
+
     @Override
     void solve(List<String> input) {
 
