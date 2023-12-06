@@ -10,7 +10,14 @@ public class Day06 extends AOCUtils {
     void solve(List<String> input) {
         List<Integer> times = convertToInts(List.of(input.get(0).split(":\\s+")[1].split("\\s+")));
         List<Integer> distances = convertToInts(List.of(input.get(1).split(":\\s+")[1].split("\\s+")));
+        solution(pt1(times, distances));
 
+        long time = Long.parseLong(input.get(0).split(":\\s+")[1].replace(" ", ""));
+        long distance = Long.parseLong(input.get(1).split(":\\s+")[1].replace(" ", ""));
+        solution(pt2(time, distance));
+    }//solve
+
+    int pt1(List<Integer> times, List<Integer> distances) {
         int ris = 1;
         for(int i = 0; i < times.size(); i++) {
             int cnt = 0;
@@ -18,17 +25,14 @@ public class Day06 extends AOCUtils {
                 cnt += (times.get(i) - j) * j > distances.get(i) ? 1 : 0;
             ris *= cnt;
         }//for
+        return ris;
+    }//pt1
 
-        solution(ris);
-
-        long time = Long.parseLong(input.get(0).split(":\\s+")[1].replace(" ", ""));
-        long distance = Long.parseLong(input.get(1).split(":\\s+")[1].replace(" ", ""));
-
-        ris = 0;
+    long pt2(long time, long distance) {
+        int ris = 0;
         for (int j = 0; j <= time; j++) {
             ris += (time - j) * j > distance ? 1 : 0;
         }//for
-
-        solution(ris);
-    }//solve
+        return ris;
+    }//pt1
 }//class
