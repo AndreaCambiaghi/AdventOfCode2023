@@ -9,9 +9,14 @@ public class Day07 extends AOCUtils {
         A, K, Q, J, T, _9, _8, _7, _6, _5, _4, _3, _2;
     }//CARD
 
+    public enum CARD_J {
+        A, K, Q, T, _9, _8, _7, _6, _5, _4, _3, _2, J;
+    }//CARD_J
+
 
     @Override
     void solve(List<String> input) {
+        List<String> copy = new ArrayList<>(input);
         input.sort(Day07::compareHand);
         int i = input.size();
         int ris = 0;
@@ -20,10 +25,41 @@ public class Day07 extends AOCUtils {
             ris += (points * i--);
         }//for
         solution(ris);
+
+        copy.sort(Day07::compareHand2);
+        i = input.size();
+        ris = 0;
+        for(String row : copy) {
+            int points = Integer.parseInt(row.split("\\s+")[1]);
+            ris += (points * i--);
+        }//for
+        solution(ris);
+
     }//solve
 
     private static int getPunti(String cards) {
         return fiveOfKind(cards);
+    }//getPunti
+
+    private static <T extends Enum<T>> int getPunti2(String cards) {
+        if(!cards.contains("J"))
+            return fiveOfKind(cards);
+        else {
+            int maxPoints = fiveOfKind(cards);
+            for (Enum<T> val : ((Class<T>) CARD_J.class).getEnumConstants()) {
+                if(val.name().length() == 1) {
+                    int points = fiveOfKind(cards.replace('J', val.name().charAt(0)));
+                    if(points < maxPoints)
+                        maxPoints = points;
+
+                } else {
+                    int points = fiveOfKind(cards.replace('J', val.name().charAt(1)));
+                    if(points < maxPoints)
+                        maxPoints = points;
+                }//else
+            }//for
+            return maxPoints;
+        }//else
     }//getPunti
 
     private static int fiveOfKind(String cards) {
@@ -94,8 +130,34 @@ public class Day07 extends AOCUtils {
 
     }//compareHand
 
-    private static <T extends Enum<T>> int getOrdinal(Class<T> card, char c) {
-        for (Enum<T> val : card.getEnumConstants())
+    private static int compareHand2(String hand1, String hand2) {
+
+        // SE IL PRIMO MAGGIORE ALLORA > 0
+        // SE SONO UGUALI ALLORA = 0
+        // SE IL SECONDO MAGGIORE ALLORA < 0
+        hand1 = hand1.split("\\s+")[0];
+        hand2 = hand2.split("\\s+")[0];
+        int points1 = getPunti2(hand1);
+        int point2 = getPunti2(hand2);
+        if(points1 > point2)
+            return 1;
+        else if(points1 < point2)
+            return -1;
+        else
+            for(int i = 0; i < 5; i++) {
+                int ordinal1 = getOrdinal(CARD_J.class, hand1.charAt(i));
+                int ordinal2 = getOrdinal(CARD_J.class, hand2.charAt(i));
+                if(ordinal1 == ordinal2)
+                    continue;
+                return ordinal1 - ordinal2;
+            }//for
+
+        return -100;
+
+    }//compareHand2
+
+    private static <T extends Enum<T>> int getOrdinal(Class<T> card_enum, char c) {
+        for (Enum<T> val : card_enum.getEnumConstants())
             if (val.name().charAt(Character.isDigit(c) && val.name().length() == 2 ? 1 : 0) == c)
                 return val.ordinal();
         return -1;
