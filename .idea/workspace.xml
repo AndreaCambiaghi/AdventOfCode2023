@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day7 - part1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2023/Day07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day07.java" afterDir="false" />
-    </list>
+    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day7 - refectoring" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -245,7 +242,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701950720746</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="day7 - part2">
+      <option name="closed" value="true" />
+      <created>1701952265737</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701952265737</updated>
+    </task>
+    <task id="LOCAL-00019" summary="day7 - refectoring">
+      <option name="closed" value="true" />
+      <created>1701953087410</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701953087410</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +289,8 @@
     <MESSAGE value="day7 - init" />
     <MESSAGE value="day5 - part2" />
     <MESSAGE value="day7 - part1" />
-    <option name="LAST_COMMIT_MESSAGE" value="day7 - part1" />
+    <MESSAGE value="day7 - part2" />
+    <MESSAGE value="day7 - refectoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="day7 - refectoring" />
   </component>
 </project>
