@@ -4,8 +4,6 @@ import java.util.*;
 
 public class Day05 extends AOCUtils {
     public Day05() { super("5"); }
-
-    // HO CANCELLATO LA PARTE 2.. troppo tempo.. provare con range..
     @Override
     void solve(List<String> input) {
 
