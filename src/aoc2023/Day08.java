@@ -23,18 +23,56 @@ public class Day08 extends AOCUtils {
         }//for
         String curr = "AAA";
         int idx = 0;
-        while (!curr.equals("ZZZ")) {
+        /*while (!curr.equals("ZZZ")) {
             char lf = cmd.charAt(idx % cmd.length());
             if(lf == 'L')
                 curr = nodes.get(curr).l;
             else if(lf == 'R')
                 curr = nodes.get(curr).r;
             idx++;
-        }//while
+        }//while*/
 
         solution(idx);
 
+        List<Long> idxs = new ArrayList<>();
+        List<String> currs = new ArrayList<>();
+        for(String node : nodes.keySet())
+            if(node.endsWith("A"))
+                currs.add(node);
+
+        for(String c : currs) {
+            idx = 0;
+            while (!c.endsWith("Z")) {
+                char lf = cmd.charAt(idx % cmd.length());
+                if(lf == 'L')
+                    c = nodes.get(c).l;
+                else if(lf == 'R')
+                    c = nodes.get(c).r;
+                idx++;
+            }//while
+            idxs.add((long) idx);
+        }//for
+
+        solution(mcmList(idxs));
     }//solve
 
+    public static long mcm(long a, long b) {
+        long mcd = gcd(a, b);
+        return (a * b) / mcd;
+    }//mcm
+
+    public static long gcd(long a, long b) {
+        if (b == 0)
+            return a;
+        else
+            return gcd(b, a % b);
+    }//gcd
+
+    public static long mcmList(List<Long> list) {
+        long result = list.get(0);
+        for (int i = 1; i < list.size(); i++)
+            result = mcm(result, list.get(i));
+        return result;
+    }//mcmList
 
 }//class

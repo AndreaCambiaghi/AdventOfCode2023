@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day8 - part1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in/day8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/day8.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aoc2023/Day08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day08.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701972254969</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="day8 - part1">
+      <option name="closed" value="true" />
+      <created>1702034023831</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1702034023831</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,6 +320,7 @@
     <MESSAGE value="day7 - refectoring" />
     <MESSAGE value="day8 - init" />
     <MESSAGE value="day5 - typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="day5 - typo" />
+    <MESSAGE value="day8 - part1" />
+    <option name="LAST_COMMIT_MESSAGE" value="day8 - part1" />
   </component>
 </project>
