@@ -6,55 +6,71 @@ import java.util.List;
 import java.util.Map;
 
 public class Day08 extends AOCUtils {
-    public Day08() { super("8"); }
+    public Day08() {
+        super("8");
+    }
 
-    private record Node(String l, String r){}
+    private record Node(String l, String r) {
+    }
 
     @Override
     void solve(List<String> input) {
 
         String cmd = input.remove(0);
         input.remove(0);
+
+        Map<String, Node> nodes = fillMap(input);
+
+        solution(part1(nodes, cmd));
+        solution(part2(nodes, cmd));
+
+    }//solve
+
+    private static Map<String, Node> fillMap(List<String> input) {
         Map<String, Node> nodes = new HashMap<>();
-        for(String row : input) {
+        for (String row : input) {
             row = row.replaceAll("[=,()]", "");
             String[] node = row.split("\\s+");
             nodes.put(node[0], new Node(node[1], node[2]));
         }//for
+        return nodes;
+    }//fillMap
+
+    private static int part1(Map<String, Node> nodes, String cmd) {
         String curr = "AAA";
         int idx = 0;
-        /*while (!curr.equals("ZZZ")) {
+        while (!curr.equals("ZZZ")) {
             char lf = cmd.charAt(idx % cmd.length());
-            if(lf == 'L')
+            if (lf == 'L')
                 curr = nodes.get(curr).l;
-            else if(lf == 'R')
+            else if (lf == 'R')
                 curr = nodes.get(curr).r;
             idx++;
-        }//while*/
+        }//while
+        return idx;
+    }//part1
 
-        solution(idx);
-
+    private static long part2(Map<String, Node> nodes, String cmd) {
         List<Long> idxs = new ArrayList<>();
         List<String> currs = new ArrayList<>();
-        for(String node : nodes.keySet())
-            if(node.endsWith("A"))
+        for (String node : nodes.keySet())
+            if (node.endsWith("A"))
                 currs.add(node);
 
-        for(String c : currs) {
-            idx = 0;
+        for (String c : currs) {
+            int idx = 0;
             while (!c.endsWith("Z")) {
                 char lf = cmd.charAt(idx % cmd.length());
-                if(lf == 'L')
+                if (lf == 'L')
                     c = nodes.get(c).l;
-                else if(lf == 'R')
+                else if (lf == 'R')
                     c = nodes.get(c).r;
                 idx++;
             }//while
             idxs.add((long) idx);
         }//for
-
-        solution(mcmList(idxs));
-    }//solve
+        return mcmList(idxs);
+    }//class
 
     public static long mcm(long a, long b) {
         long mcd = gcd(a, b);
