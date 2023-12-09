@@ -34,6 +34,32 @@ public class Day09 extends AOCUtils {
             ris += sequences.get(0).get(sequences.get(0).size()-1);
         }//for
         solution(ris);
+
+        ris = 0;
+        for(String row : input) {
+
+            List<List<Integer>> sequences = new ArrayList<>();
+            List<Integer> original = convertToInts(List.of(row.split("\\s+")));
+            sequences.add(original);
+            List<Integer> newSequence = new ArrayList<>();
+            while(!original.stream().allMatch(n -> n == 0)) {
+                for (int i = 0; i < original.size() - 1; i++) {
+                    newSequence.add(original.get(i + 1) - original.get(i));
+                }//for
+                sequences.add(newSequence);
+                original = newSequence;
+                newSequence = new ArrayList<>();
+            }//while
+
+            sequences.get(sequences.size()-1).add(0);
+            for(int i = sequences.size() - 2; i > 0; i--) {
+                sequences.get(i-1).add(0, sequences.get(i-1).get(0) - sequences.get(i).get(0));
+            }//for
+            ris += sequences.get(0).get(0);
+        }//for
+        solution(ris);
+
+
     }//solve
 
 }//class
