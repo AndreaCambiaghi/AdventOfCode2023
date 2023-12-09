@@ -16,15 +16,7 @@ public class Day09 extends AOCUtils {
             List<List<Integer>> sequences = new ArrayList<>();
             List<Integer> original = convertToInts(List.of(row.split("\\s+")));
             sequences.add(original);
-            List<Integer> newSequence = new ArrayList<>();
-            while(!original.stream().allMatch(n -> n == 0)) {
-                for (int i = 0; i < original.size() - 1; i++) {
-                    newSequence.add(original.get(i + 1) - original.get(i));
-                }//for
-                sequences.add(newSequence);
-                original = newSequence;
-                newSequence = new ArrayList<>();
-            }//while
+            createSequences(original, sequences);
 
             sequences.get(sequences.size()-1).add(0);
             for(int i = sequences.size() - 2; i > 0; i--) {
@@ -41,15 +33,7 @@ public class Day09 extends AOCUtils {
             List<List<Integer>> sequences = new ArrayList<>();
             List<Integer> original = convertToInts(List.of(row.split("\\s+")));
             sequences.add(original);
-            List<Integer> newSequence = new ArrayList<>();
-            while(!original.stream().allMatch(n -> n == 0)) {
-                for (int i = 0; i < original.size() - 1; i++) {
-                    newSequence.add(original.get(i + 1) - original.get(i));
-                }//for
-                sequences.add(newSequence);
-                original = newSequence;
-                newSequence = new ArrayList<>();
-            }//while
+            createSequences(original, sequences);
 
             sequences.get(sequences.size()-1).add(0);
             for(int i = sequences.size() - 2; i > 0; i--) {
@@ -61,5 +45,17 @@ public class Day09 extends AOCUtils {
 
 
     }//solve
+
+    private static void createSequences(List<Integer> original, List<List<Integer>> sequences) {
+        List<Integer> newSequence = new ArrayList<>();
+        while(!original.stream().allMatch(n -> n == 0)) {
+            for (int i = 0; i < original.size() - 1; i++) {
+                newSequence.add(original.get(i + 1) - original.get(i));
+            }//for
+            sequences.add(newSequence);
+            original = newSequence;
+            newSequence = new ArrayList<>();
+        }//while
+    }//createSequences
 
 }//class
