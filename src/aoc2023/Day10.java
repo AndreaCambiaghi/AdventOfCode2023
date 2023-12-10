@@ -70,7 +70,7 @@ public class Day10 extends AOCUtils {
         Deque<Position> q = new ArrayDeque<>();
         q.add(new Position(sr, sc));
 
-        Set<String> maybe_s = new HashSet<>(Set.of("|", "-", "J", "L", "7", "F"));
+        Set<String> possibleValidMoves = new HashSet<>(Set.of("|", "-", "J", "L", "7", "F"));
 
         while (!q.isEmpty()) {
             Position current = q.poll();
@@ -82,65 +82,57 @@ public class Day10 extends AOCUtils {
             if (r > 0 && "S|JL".contains(String.valueOf(ch)) && "|7F".contains(String.valueOf(grid.get(r - 1).charAt(c))) && !loop.contains(new Position(r - 1, c))) {
                 loop.add(new Position(r - 1, c));
                 q.add(new Position(r - 1, c));
-                if (ch == 'S') {
-                    maybe_s.retainAll(Set.of("|", "J", "L"));
-                }
-            }
+                if (ch == 'S')
+                    possibleValidMoves.retainAll(Set.of("|", "J", "L"));
+            }//if
 
             // Logica per spostarsi in basso
             if (r < grid.size() - 1 && "S|7F".contains(String.valueOf(ch)) && "|JL".contains(String.valueOf(grid.get(r + 1).charAt(c))) && !loop.contains(new Position(r + 1, c))) {
                 loop.add(new Position(r + 1, c));
                 q.add(new Position(r + 1, c));
-                if (ch == 'S') {
-                    maybe_s.retainAll(Set.of("|", "7", "F"));
-                }
-            }
+                if (ch == 'S')
+                    possibleValidMoves.retainAll(Set.of("|", "7", "F"));
+            }//if
 
             // Logica per spostarsi a sinistra
             if (c > 0 && "S-J7".contains(String.valueOf(ch)) && "-LF".contains(String.valueOf(grid.get(r).charAt(c - 1))) && !loop.contains(new Position(r, c - 1))) {
                 loop.add(new Position(r, c - 1));
                 q.add(new Position(r, c - 1));
-                if (ch == 'S') {
-                    maybe_s.retainAll(Set.of("-", "J", "7"));
-                }
-            }
+                if (ch == 'S')
+                    possibleValidMoves.retainAll(Set.of("-", "J", "7"));
+            }//if
 
             // Logica per spostarsi a destra
             if (c < grid.get(r).length() - 1 && "S-LF".contains(String.valueOf(ch)) && "-J7".contains(String.valueOf(grid.get(r).charAt(c + 1))) && !loop.contains(new Position(r, c + 1))) {
                 loop.add(new Position(r, c + 1));
                 q.add(new Position(r, c + 1));
-                if (ch == 'S') {
-                    maybe_s.retainAll(Set.of("-", "L", "F"));
-                }
-            }
-        }
+                if (ch == 'S')
+                    possibleValidMoves.retainAll(Set.of("-", "L", "F"));
+            }//if
+        }//for
 
-        String S = maybe_s.iterator().next();
+        String S = possibleValidMoves.iterator().next();
 
-        // Prima sostituzione
         List<String> modifiedGrid = new ArrayList<>();
         for (String row : grid) {
             String modifiedRow = row.replace("S", S);
             modifiedGrid.add(modifiedRow);
-        }
+        }//for
         grid = new ArrayList<>(modifiedGrid);
 
-        // Seconda sostituzione
         modifiedGrid = new ArrayList<>();
         for (int r = 0; r < grid.size(); r++) {
             StringBuilder modifiedRow = new StringBuilder();
 
             for (int c = 0; c < grid.get(r).length(); c++) {
-                char ch = grid.get(r).charAt(c);
-                if (loop.contains(new Position(r, c))) {
-                    modifiedRow.append(ch);
-                } else {
+                if (loop.contains(new Position(r, c)))
+                    modifiedRow.append(grid.get(r).charAt(c));
+                else
                     modifiedRow.append(".");
-                }
-            }
+            }//for
 
             modifiedGrid.add(modifiedRow.toString());
-        }
+        }//for
 
         grid = new ArrayList<>(modifiedGrid);
 
