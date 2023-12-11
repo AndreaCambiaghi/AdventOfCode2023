@@ -10,8 +10,9 @@ public class Day11 extends AOCUtils {
 
     @Override
     void solve(List<String> input) {
-        expandRow(input);
-        expandColumn(input);
+        List<String> grid = new ArrayList<>(input);
+        List<Integer> emptyRows = expandRow(input);
+        List<Integer> emptyCols = convertToInts(expandColumn(input));
 
         List<Position> galaxyPositions = findGalaxyPositions(input);
 
@@ -22,9 +23,38 @@ public class Day11 extends AOCUtils {
 
         solution(sum);
 
+        List<Position> points = new ArrayList<>();
+        long total = 0;
+        int scale = 1000000;
+
+        for(int r = 0; r < grid.size(); r++)
+            for (int c = 0; c < grid.get(r).length(); c++)
+                if (grid.get(r).charAt(c) == '#')
+                    points.add(new Position(r, c));
+
+        for (int i = 0; i < points.size(); i++) {
+            Position point1 = points.get(i);
+            int r1 = point1.r;
+            int c1 = point1.c;
+
+            for (int j = 0; j < i; j++) {
+                Position point2 = points.get(j);
+                int r2 = point2.r;
+                int c2 = point2.c;
+
+                for (int r = Math.min(r1, r2); r < Math.max(r1, r2); r++)
+                    total += (emptyRows.contains(r) ? scale : 1);
+
+                for (int c = Math.min(c1, c2); c < Math.max(c1, c2); c++)
+                    total += (emptyCols.contains(c) ? scale : 1);
+            }//for
+        }//for
+
+        solution(total);
+
     }//solve
 
-    private static void expandRow(List<String> input) {
+    private static List<Integer> expandRow(List<String> input) {
         List<Integer> rows = new ArrayList<>();
         for(int r = 0; r < input.size(); r++)
             if(!input.get(r).contains("#"))
@@ -32,9 +62,11 @@ public class Day11 extends AOCUtils {
 
         for(int i = 0; i < rows.size(); i++)
             input.add(rows.get(i) + i, ".".repeat(input.get(i).length()));
+
+        return rows;
     }//expandRow
 
-    private static void expandColumn(List<String> input) {
+    private static List<String> expandColumn(List<String> input) {
         List<String> cols = new ArrayList<>();
         for (int i = 0; i < input.get(0).length(); i++)
             cols.add(i + "");
@@ -56,6 +88,7 @@ public class Day11 extends AOCUtils {
 
         input.clear();
         input.addAll(modifiedInput);
+        return cols;
     }//expandColumn
 
     private static List<Position> findGalaxyPositions(List<String> input) {
