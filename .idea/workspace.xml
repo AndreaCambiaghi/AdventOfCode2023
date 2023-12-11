@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day10 - part2">
+    <list default="true" id="a42503a4-abbd-4b02-b0c2-c8d336dc6545" name="Changes" comment="day11 - part2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2023/Day10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2023/Day11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2023/Day11.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,15 +38,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/day10",
-    "last_opened_file_path": "C:/Users/andre/IdeaProjects/AoC2022"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/day11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/AoC2022&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="aoc2023" />
@@ -333,7 +333,31 @@
       <option name="project" value="LOCAL" />
       <updated>1702242033901</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="day11 - init">
+      <option name="closed" value="true" />
+      <created>1702293347325</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1702293347325</updated>
+    </task>
+    <task id="LOCAL-00030" summary="day11 - part1">
+      <option name="closed" value="true" />
+      <created>1702293354128</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1702293354128</updated>
+    </task>
+    <task id="LOCAL-00031" summary="day11 - part2">
+      <option name="closed" value="true" />
+      <created>1702294453346</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1702294453346</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,9 +372,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="day1 - part2" />
-    <MESSAGE value="day3 - init" />
-    <MESSAGE value="day3 - part1" />
     <MESSAGE value="day3 - part2" />
     <MESSAGE value="day4 - init" />
     <MESSAGE value="day4 - part1" />
@@ -373,6 +394,9 @@
     <MESSAGE value="day9 - part2" />
     <MESSAGE value="day10 - part1" />
     <MESSAGE value="day10 - part2" />
-    <option name="LAST_COMMIT_MESSAGE" value="day10 - part2" />
+    <MESSAGE value="day11 - init" />
+    <MESSAGE value="day11 - part1" />
+    <MESSAGE value="day11 - part2" />
+    <option name="LAST_COMMIT_MESSAGE" value="day11 - part2" />
   </component>
 </project>
