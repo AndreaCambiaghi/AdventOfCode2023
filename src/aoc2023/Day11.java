@@ -10,22 +10,48 @@ public class Day11 extends AOCUtils {
 
     @Override
     void solve(List<String> input) {
-        List<String> grid = new ArrayList<>(input);
+
         List<Integer> emptyRows = expandRow(input);
-        List<Integer> emptyCols = convertToInts(expandColumn(input));
+        List<Integer> emptyCols = expandColumn(input);
 
-        List<Position> galaxyPositions = findGalaxyPositions(input);
+        solution(calculate(input, emptyRows, emptyCols, 2));
+        solution(calculate(input, emptyRows, emptyCols, 1000000));
 
-        int sum = 0;
-        for(int i = 0; i < galaxyPositions.size(); i++)
-            for(int j = i + 1; j < galaxyPositions.size(); j++)
-                sum += Math.abs(galaxyPositions.get(i).r - galaxyPositions.get(j).r) + Math.abs(galaxyPositions.get(i).c - galaxyPositions.get(j).c);
+    }//solve
 
-        solution(sum);
+    private static List<Integer> expandRow(List<String> input) {
+        List<Integer> rows = new ArrayList<>();
+        for(int r = 0; r < input.size(); r++)
+            if(!input.get(r).contains("#"))
+                rows.add(r);
 
+        return rows;
+    }//expandRow
+
+    private static List<Integer> expandColumn(List<String> input) {
+        int numCols = input.get(0).length();
+
+        List<Integer> colsToRemove = new ArrayList<>();
+
+        for(int c = 0; c < numCols; c++) {
+            boolean shouldRemove = true;
+            for(String s : input) {
+                if (s.charAt(c) == '#') {
+                    shouldRemove = false;
+                    break;
+                }//if
+            }//for
+            if (shouldRemove)
+                colsToRemove.add(c);
+        }//for
+
+        return colsToRemove;
+    }//expandCols
+
+
+    private long calculate(List<String> grid, List<Integer> emptyRows, List<Integer> emptyCols, int scale) {
         List<Position> points = new ArrayList<>();
         long total = 0;
-        int scale = 1000000;
 
         for(int r = 0; r < grid.size(); r++)
             for (int c = 0; c < grid.get(r).length(); c++)
@@ -49,56 +75,7 @@ public class Day11 extends AOCUtils {
                     total += (emptyCols.contains(c) ? scale : 1);
             }//for
         }//for
-
-        solution(total);
-
-    }//solve
-
-    private static List<Integer> expandRow(List<String> input) {
-        List<Integer> rows = new ArrayList<>();
-        for(int r = 0; r < input.size(); r++)
-            if(!input.get(r).contains("#"))
-                rows.add(r);
-
-        for(int i = 0; i < rows.size(); i++)
-            input.add(rows.get(i) + i, ".".repeat(input.get(i).length()));
-
-        return rows;
-    }//expandRow
-
-    private static List<String> expandColumn(List<String> input) {
-        List<String> cols = new ArrayList<>();
-        for (int i = 0; i < input.get(0).length(); i++)
-            cols.add(i + "");
-
-        for(String string : input)
-            for(int c = 0; c < string.length(); c++)
-                if(string.charAt(c) == '#')
-                    cols.remove(c + "");
-
-
-        List<String> modifiedInput = new ArrayList<>();
-
-        for(String s : input) {
-            StringBuilder newRow = new StringBuilder(s);
-            for(int i = 0; i < cols.size(); i++)
-                newRow.insert(Integer.parseInt(cols.get(i)) + i, ".");
-            modifiedInput.add(newRow.toString());
-        }//for
-
-        input.clear();
-        input.addAll(modifiedInput);
-        return cols;
-    }//expandColumn
-
-    private static List<Position> findGalaxyPositions(List<String> input) {
-        List<Position> galaxyPositions = new ArrayList<>();
-
-        for (int r = 0; r < input.size(); r++)
-            for (int c = 0; c < input.get(r).length(); c++)
-                if (input.get(r).charAt(c) == '#')
-                    galaxyPositions.add(new Position(r, c));
-        return galaxyPositions;
-    }//findGalaxyPositions
+        return total;
+    }//calculate
 
 }//class
